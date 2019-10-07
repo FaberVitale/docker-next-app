@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NavLink matches snapshot 1`] = `
+<DocumentFragment>
+  <a
+    href="/about.asp"
+    rel="noopener"
+    title="about-title"
+  >
+    anchor-text
+  </a>
+</DocumentFragment>
+`;

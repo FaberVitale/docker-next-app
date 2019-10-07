@@ -1,0 +1,21 @@
+{
+  "extends": "../tsconfig.json",
+  "compilerOptions": {
+    "baseUrl": "."
+  },
+  "exclude": [
+    "node_modules",
+    "./@types/server",
+    "**/*.spec.ts",
+    "**/*.spec.tsx",
+    "**/*.test.ts",
+    "**/*.test.tsx"
+  ],
+  "include": [
+    "next-env.d.ts",
+    "./**/*.ts",
+    "./**/*.tsx",
+    "../@types/webpack",
+    "components/NavLink/tests/index.test.js"
+  ]
+}

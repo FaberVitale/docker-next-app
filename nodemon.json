@@ -1,0 +1,6 @@
+{
+  "quiet": true,
+  "watch": ["server", "app", "@types"],
+  "ignore": ["*.{test, spec}.{ts, tsx, js, jsx}", "./build/*"],
+  "ext": "js,jsx,json,ts,tsx"
+}
