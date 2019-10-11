@@ -1,5 +1,8 @@
 # Docs: https://docs.docker.com/engine/reference/builder/#dockerignore-file
+
 node_modules
+build
+coverage
 
 # GIT
 .git
@@ -8,6 +11,8 @@ node_modules
 
 # Editor config files
 .vscode
+.idea
+.editorconfig
 
 # Log files
 *.log
