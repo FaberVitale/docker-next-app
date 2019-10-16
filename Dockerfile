@@ -30,10 +30,15 @@ ENV NODE_ENV=production
 
 WORKDIR ${ROOT_APP_DIR}
 
+# We copy only the relevant data leaving behind build dependencies
+# and `yarn` cache (https://yarnpkg.com/lang/en/docs/cli/cache/).
 COPY --from=build-env ${ROOT_APP_DIR} ./
 
 EXPOSE ${PORT}
 
+# Run container as non root.
+# https://docs.docker.com/develop/develop-images/dockerfile_best-practices/#user
+# https://github.com/nodejs/docker-node/blob/master/docs/BestPractices.md#non-root-user
 USER node
 
 ENTRYPOINT [ "yarn" ]
