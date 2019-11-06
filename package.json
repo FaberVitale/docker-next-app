@@ -1,7 +1,8 @@
 {
   "name": "docker-next-app",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
+  "license": "MIT",
   "scripts": {
     "dev": "nodemon --exec 'npm run build:server && npm run start:dev'",
     "predev": "run-s build:clean",
@@ -15,6 +16,7 @@
     "start": "node ./build/index.js",
     "start:prod": "NODE_ENV=production npm run start",
     "lint:ts:client": "tsc --noEmit -p './app/tsconfig.json'",
+    "test": "jest --silent",
     "lint:ts:server": "npm run build:server -- --noEmit",
     "lint:ts": "run-p --aggregate-output --continue-on-error lint:ts:client lint:ts:server",
     "lint:eslint": "eslint './{app,server,config}/**/*.{ts,tsx,js,jsx}' --fix",
