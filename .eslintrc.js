@@ -12,6 +12,9 @@ module.exports = {
     'react-app',
     'plugin:prettier/recommended',
     'plugin:import/errors',
+    "eslint:recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended",
   ],
   env: {
     node: true,
@@ -58,5 +61,8 @@ module.exports = {
     'no-shadow': 2,
     'import/no-self-import': 2,
     'react/button-has-type': 2,
+    '@typescript-eslint/indent': 0,
+    '@typescript-eslint/explicit-function-return-type': 0,
+    "@typescript-eslint/no-var-requires": 0,
   },
 };

@@ -3,8 +3,10 @@ FROM node:12.10.0-alpine as build-env
 
 ARG PORT=3000
 ARG ROOT_APP_DIR=/home/node/docker-next-app
+ARG API_ROOT=http://localhost:5000/api
 ENV PORT=${PORT}
 ENV NODE_ENV=build-env
+ENV API_ROOT=${API_ROOT}
 
 WORKDIR ${ROOT_APP_DIR}
 
@@ -23,10 +25,12 @@ RUN yarn install --prod --frozen-lockfile \
 
 FROM node:12.10.0-alpine
 
-ARG PORT=3000
+ARG PORT=5000
 ARG ROOT_APP_DIR=/home/node/docker-next-app
+ARG API_ROOT=http://localhost:5000/api
 ENV PORT=${PORT}
 ENV NODE_ENV=production
+ENV API_ROOT=${API_ROOT}
 
 WORKDIR ${ROOT_APP_DIR}
 

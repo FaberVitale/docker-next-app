@@ -1,15 +1,16 @@
 import React from 'react';
 import NavLink from './NavLink';
 
-type LinkData = {
+interface LinkData {
   href: string;
   label: string;
   key?: string;
-};
+}
 
-const links: Array<LinkData> = [
+const links: LinkData[] = [
   { href: 'https://zeit.co/now', label: 'ZEIT' },
   { href: 'https://github.com/zeit/next.js', label: 'GitHub' },
+  { href: '/user', label: 'user' },
 ].map((link: LinkData) => {
   link.key = `nav-link-${link.href}-${link.label}`;
 
@@ -20,7 +21,7 @@ const Nav = () => (
   <nav>
     <ul>
       <li>
-        <NavLink href="/home">home</NavLink>
+        <NavLink href="/">home</NavLink>
       </li>
       {links.map(({ key, href, label }) => (
         <li key={key}>

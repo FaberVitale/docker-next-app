@@ -16,6 +16,8 @@
     "./**/*.ts",
     "./**/*.tsx",
     "../@types/webpack",
-    "components/NavLink/tests/index.test.js"
+    "../@types/api.d.ts",
+    "components/NavLink/tests/index.test.js",
+    "config/http-service.js"
   ]
 }

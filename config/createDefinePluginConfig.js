@@ -22,7 +22,7 @@ const prepareEnv = (envValue, options) => {
 };
 
 const createDefineWebpackPluginConfig = (
-  { buildId, isServer, dev },
+  { isServer, dev },
   options = DEFAULT_OPTIONS,
 ) => {
   const buildDate = options.buildDate || new Date().toISOString();

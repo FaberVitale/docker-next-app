@@ -1,5 +1,6 @@
 import express from 'express';
 import next from 'next';
+import api from './api';
 import { IS_DEV, PORT } from './utils/environment';
 
 const clientApp = next({ dev: IS_DEV, dir: './app' });
@@ -8,14 +9,18 @@ const app = express();
 
 clientApp.prepare().then(() => {
   if (IS_DEV) {
+    /* eslint-disable @typescript-eslint/no-var-requires */
     const {
       default: addDevelopmentMiddlewares,
     } = require('./configureDevelopmentMiddlewares');
+    /* eslint-enable @typescript-eslint/no-var-requires */
 
     addDevelopmentMiddlewares(app);
   }
 
-  app.use('/*', (req, res) => handle(req, res));
+  app.use('/api', api);
+
+  app.get('/*', (req, res) => handle(req, res));
 
   const server = app.listen(PORT, () => {
     console.log(`> Ready on http://localhost:${PORT}`);
