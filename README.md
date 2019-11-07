@@ -9,7 +9,7 @@
 ## Description
 
 Starter for a ssr single page app powered by [Next.js](https://nextjs.org/docs) and [Typescript](https://www.typescriptlang.org/).
-Includes a [Dockerfile](https://docs.docker.com/engine/reference/builder/) to the app in a container.
+Includes a [Dockerfile](https://docs.docker.com/engine/reference/builder/) to run the app in a container.
 
 ## Scripts
 
@@ -23,11 +23,11 @@ Runs tests.
 
 ### yarn build
 
-Build and emits production code and assets to `./build`.
+Builds and emits production code and assets to `./build`.
 
 ### yarn lint
 
-Validate typescript code and runs eslint.
+Validates typescript code and runs linter.
 
 ### yarn start:prod
 
