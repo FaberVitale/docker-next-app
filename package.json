@@ -3,6 +3,10 @@
   "version": "0.2.0",
   "private": true,
   "license": "MIT",
+  "engines": {
+    "npm": ">=6.10.x",
+    "node": ">=12.7.x"
+  },
   "scripts": {
     "dev": "nodemon --exec 'npm run build:server && npm run start:dev'",
     "predev": "run-s build:clean",
