@@ -3,6 +3,7 @@ import { createClient, createCache } from 'react-fetching-library';
 // https://marcin-piela.github.io/react-fetching-library/#/?id=cache-provider
 const cache = createCache(
   (action) => {
+    // We cache only `GET` requests.
     return action.method === 'GET';
   },
 

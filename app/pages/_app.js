@@ -1,8 +1,9 @@
 import 'isomorphic-unfetch';
 import * as React from 'react';
 import App from 'next/app';
+import CssBaseline from 'components/CssBaseline';
 import { ClientContextProvider } from 'react-fetching-library';
-import httpService from '../config/http-service';
+import httpService from 'config/http-service';
 
 class AppRoot extends App {
   static async getInitialProps(appContext) {
@@ -23,9 +24,17 @@ class AppRoot extends App {
     httpService.cache.setItems(cacheItems);
 
     return (
-      <ClientContextProvider client={httpService}>
-        <Component {...pageProps} />
-      </ClientContextProvider>
+      <>
+        <CssBaseline />
+        {/* we have to import the styles here due to:  */}
+        <link
+          rel="stylesheet"
+          href="https://unpkg.com/react-table@latest/react-table.css"
+        />
+        <ClientContextProvider client={httpService}>
+          <Component {...pageProps} />
+        </ClientContextProvider>
+      </>
     );
   }
 }

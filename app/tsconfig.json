@@ -18,6 +18,7 @@
     "../@types/webpack",
     "../@types/api.d.ts",
     "components/NavLink/tests/index.test.js",
-    "config/http-service.js"
+    "config/http-service.ts",
+    "components/UserTable/index.tsx"
   ]
 }

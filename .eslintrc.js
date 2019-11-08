@@ -64,5 +64,6 @@ module.exports = {
     '@typescript-eslint/indent': 0,
     '@typescript-eslint/explicit-function-return-type': 0,
     "@typescript-eslint/no-var-requires": 0,
+    "jsx-a11y/anchor-is-valid": 0,
   },
 };

@@ -4,6 +4,10 @@ import { useQuery, Action } from 'react-fetching-library';
 import httpService from 'config/http-service';
 import { apiEndpoints } from 'config/constants';
 import ErrorLabel from 'components/ErrorLabel';
+import UsersTable from 'components/UsersTable';
+import AppBar from 'components/AppBar';
+import AppBarButton from 'components/AppBar/partials/AppBarButton';
+import PageContent from 'components/PageContent';
 
 const action: Action = {
   method: 'GET',
@@ -20,18 +24,16 @@ const User = () => {
       <Head>
         <title>User</title>
       </Head>
-      <div>
-        {loading && <span>Loading</span>}
-        {error && <ErrorLabel />}
-        {!loading &&
-          users &&
-          users.map((user: UserData) => (
-            <span key={user.id}>{JSON.stringify(user)}</span>
-          ))}
-        <button type="button" onClick={query}>
-          Reload
-        </button>
-      </div>
+      <main>
+        <AppBar>
+          <AppBarButton href="/">Home</AppBarButton>
+          <AppBarButton onClick={query}>Refresh Table</AppBarButton>
+        </AppBar>
+        <PageContent>
+          {error && <ErrorLabel />}
+          {users && <UsersTable users={users} loading={loading} />}
+        </PageContent>
+      </main>
     </>
   );
 };

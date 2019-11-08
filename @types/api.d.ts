@@ -9,18 +9,21 @@ interface GeoLocation {
   lng: string;
 }
 
-interface Address extends GeoLocation {
+interface Address {
   street: string;
   suite: string;
   city: string;
   zipcode: string;
+  geo: GeoLocation;
 }
 
-interface UserData extends CompanyInfo, Address {
+interface UserData {
   id: number;
   name: string;
   username: string;
   email: string;
   phone: string;
   website: string;
+  address: Address;
+  company: CompanyInfo;
 }
